@@ -1,4 +1,7 @@
-var watchwordString = "bez pracy nie ma kasy";
+var watchwordsArray = new Array(10);
+
+
+var watchwordString = "";
 var watchwordToDraw = "";
 var mistakeCounter = 0;
 
@@ -7,9 +10,26 @@ window.onload = start;
 
 function start()
 {
+    loadWatchwords();
+    getRandomWatchword();
     createWatchwordToDraw();
     showWatchword();
     generateKeyboard();
+
+}
+
+function loadWatchwords()
+{
+    watchwordsArray[0] = "predkosc maksymalna";
+    watchwordsArray[1] = "moc znamionowa";
+    watchwordsArray[2] = "programowanie funkcyjne";
+    watchwordsArray[3] = "fortuna kolem sie toczy";
+    watchwordsArray[4] = "nie chwal dnia przed zachodem slonca";
+    watchwordsArray[5] = "apetyt rosnie w miare jedzenia";
+    watchwordsArray[6] = "co ma wisiec nie utonie";
+    watchwordsArray[7] = "dzieci i ryby glosu nie maja";
+    watchwordsArray[8] = "grosz do grosza a bedzie kokosza";
+    watchwordsArray[9] = "szukanie igly w stogu siana";
 
 }
 
@@ -20,6 +40,11 @@ function createWatchwordToDraw(){
         else watchwordToDraw += " ";
     }
 };
+
+function getRandomWatchword()
+{
+    watchwordString = watchwordsArray[Math.floor(Math.random()*10)];
+}
 
 function showWatchword()
 {

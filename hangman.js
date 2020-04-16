@@ -116,6 +116,7 @@ function changeColor(isGoodLetter, element)
         mistakeCounter++;
         if(mistakeCounter < 10) updatePicture();
         else document.getElementById("gallows").innerHTML = "GAME OVER";
+        disableKeyboard();
     }
 }
 
